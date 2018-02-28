@@ -30,7 +30,7 @@ bot.on('message', (msg) => {
 
 if(msg.author.id != bot.id){
 
-if(msg.channel.name == "certification" && msg.content.startsWith(prefix)){
+if(msg.channel.name == "certification" && msg.content.startsWith(botconfig)){
 
         var say = msg.content.substr(1);
 
