@@ -1,0 +1,2 @@
+# genezys
+Bot discord
