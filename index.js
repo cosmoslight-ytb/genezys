@@ -1,4 +1,5 @@
 const botconfig = require("./botconfig.json");
+const tokenfile = require("./token.json");
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
@@ -115,7 +116,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("", {type: "STREAMING"});
+  bot.user.setActivity("En ligne", {type: "PLAYING"});
 
 });
 
@@ -148,4 +149,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login(process.env.TOKEN);
+bot.login(tokenfile.token);
