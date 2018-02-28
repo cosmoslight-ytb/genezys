@@ -1,0 +1,16 @@
+{
+  "name": "genezys",
+  "version": "1.0.0",
+  "description": "Bot cree par cosmoslight ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cosmoslight",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.0",
+    "ms": "^2.1.1",
+    "superagent": "^3.8.2"
+  }
+}
