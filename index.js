@@ -120,7 +120,7 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async message => {
-  var args = message.content.substring(prefix.length).split(" ");
+  var args = message.content.substring(botconfig.length).split(" ");
 
   switch (args[0].toLocaleLowerCase()){
     case "help":
