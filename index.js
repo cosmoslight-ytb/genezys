@@ -81,7 +81,7 @@ msg.guild.member(msg.author).kick();
 
 bot.on('guildMemberAdd', member => {  
 
-const salon = member.guild.channels.find('name', 'bienvenue');
+const salon = member.guild.channels.find('name', 'join-et-leave');
 
     if(!salon) return;
 
