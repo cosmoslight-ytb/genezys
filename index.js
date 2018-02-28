@@ -51,14 +51,14 @@ var recode = Attente[i].substr(code);
 
             Attente.pop();     
 
-let NouveauMembre = msg.guild.roles.find("name", "Membres");
+let Membres = msg.guild.roles.find("name", "Membres");
 
 if(!msg.guild.roles.exists("name", "Membres")) {
 
         return  msg.channel.send("**:x: Le role `Membres` n'existe pas, veuillez le créer pour faire fonctionner le captcha!**")
      
       } 
-msg.member.addRole(NouveauMembre).catch(err => console.log(err));   
+msg.member.addRole(Membres).catch(err => console.log(err));   
 
         }else{
 
