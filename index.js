@@ -30,7 +30,7 @@ bot.on('message', (msg) => {
 
 if(msg.author.id != bot.id){
 
-if(msg.channel.name == "certification" && msg.content.startsWith(botconfig)){
+if(msg.channel.name == "certification" && msg.content.startsWith(botconfig.prefix)){
 
         var say = msg.content.substr(1);
 
@@ -66,7 +66,7 @@ msg.member.addRole(Membres).catch(err => console.log(err));
 
             msg.delete();
 
-            if(!msg.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
+            if(!msg.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
 
   return;
 }
@@ -87,7 +87,7 @@ const salon = member.guild.channels.find('name', 'join-et-leave');
 
 var captcha = String(Math.random()).charAt(4) + String(Math.random()).charAt(4) + String(Math.random()).charAt(4) + String(Math.random()).charAt(4) + String(Math.random()).charAt(4);
            
-            member.send("**Bienvenue @"+ member.user.username + "** copie/colle le code ci-join dans **#certification** pour passer le captcha du serveur\n```." + captcha + "```");
+            member.send("**Bienvenue @"+ member.user.username + "** copie/colle le code ci-join dans **#certification** pour passer le captcha du serveur\n```!" + captcha + "```");
         
             member.user.id;
          
