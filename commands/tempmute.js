@@ -5,9 +5,19 @@ module.exports.run = async (bot, message, args) => {
 
   //!tempmute @user 1s/m/h/d
 
+  if(!message.member.hasPermission("MANAGE_MESAGES")) return message.reply("No can do.");
+  if(args[0] == "help"){
+    message.reply("Usage: !tempmute <user> <time: 1s/m/h/d>");
+    return;
+  }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Couldn't find user.");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Impossible de les mettre en sourdine!");
+  
+  let reason = args.slice(2).join(" ");
+  if(!reason) return message.reply("Merci d'indiquer une raison")
+  console.log(reason)
+  
   let muterole = message.guild.roles.find(`name`, "⛔ Mute");
   //start of create role
   if(!muterole){

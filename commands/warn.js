@@ -7,6 +7,10 @@ module.exports.run = async (bot, message, args) => {
 
   //!warn @daeshan <reason>
   if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("No can do pal!");
+  if(args[0] == "help"){
+    message.reply("Usage: !warn <user> <reason>");
+    return;
+  }
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!wUser) return message.reply("Couldn't find them yo");
   if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("l'utilisateur : " + message.mentions.users.first()+ "à bien étais averti");
