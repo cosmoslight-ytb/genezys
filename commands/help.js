@@ -9,8 +9,7 @@ module.exports.run = async (bot, message, args) => {
 
   message.channel.send(helpembed);
 
-  if(message.member.hasPermision("MANAGE_MESSAGES")){
-  
+  if(message.member.hasPermission("MANAGE_MESSAGES")){
    let modembed = new Discord.RichEmbed()
   .setDescription("Moderator Help Menu")
   .setColor("#8300ff")
