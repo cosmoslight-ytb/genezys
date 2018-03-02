@@ -5,6 +5,12 @@ const bot = new Discord.Client({disableEveryone: true});
 
 bot.commands = new Discord.Collection();
 
+bot.on("ready", async () => {
+  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+  bot.user.setActivity("!help || guilds : "+ bot.guilds.size + " || users : "+ bot.guilds.user, {type: "PLAYING"});
+
+});
+
 var Attente = [];
 
 
@@ -111,12 +117,6 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`${f} loaded!`);
     bot.commands.set(props.help.name, props);
   });
-});
-
-bot.on("ready", async () => {
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("En ligne", {type: "PLAYING"});
-
 });
 
 bot.on("message", async message => {
